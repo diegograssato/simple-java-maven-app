@@ -1,19 +1,40 @@
-pipeline {
-    stages {
-        stage('Build') {
-            steps {
-                sh 'echo "Build"'
+/**
+ * This pipeline describes a multi container job, running Maven and Golang builds
+ */
+
+podTemplate(label: 'maven-build', containers: [
+  containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
+  ]) {
+
+
+
+  node('maven-build') {
+    stage('Build a Maven project') {
+      git url: "https://github.com/diegograssato/simple-java-maven-app.git"
+      container('maven') {
+            stage('Maven build') {
+                echo '>>> Buildding <<<'
+                parallel(
+                        test: {
+                            sh "mvn clean test"
+                        },
+                        install: {
+                            sh "mvn clean -e -Dmaven.test.skip=true install"
+                        }
+                )
+                // Archive the build output artifacts.
+                archiveArtifacts artifacts: 'target/*.jar', excludes: 'output/*.md'
+	 
             }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo test'
+            stage('Deployment') {
+                echo '>>> Chame aqui sua ferramenta de CD! <<<'
+                sh 'sleep 5'
+                echo '>>> SUCESSO <<<'
             }
-        }
-        stage('Deliver') {
-            steps {
-                sh 'echo Deliver'
-            }
-        }
+      }
     }
+
+  }
 }
+
+
