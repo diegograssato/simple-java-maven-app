@@ -33,5 +33,12 @@ printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
 printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
 printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
 
-
+function out_danger() {
  
+
+  printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] aaaaaaaaaa ${NONE}\n"
+
+
+}
+
+ out_danger
