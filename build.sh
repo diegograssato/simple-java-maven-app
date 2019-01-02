@@ -15,15 +15,15 @@ CYAN='\e[36m'         # Cyan
 WHITE='\e[37m'        # White
 GRAY='\e[90m'         # Gray
 
-echo -e "${BLACK} BUILDING my project..."
-echo -e "${RED} BUILDING my project..."
-echo -e "${GREEN} BUILDING my project..."
-echo -e "${YELLOW} BUILDING my project..."
-echo -e "${BLUE} BUILDING my project..."
-echo -e "${PURPLE} BUILDING my project..."
-echo -e "${CYAN} BUILDING my project..."
-echo -e "${WHITE} BUILDING my project..."
-echo -e "${GRAY} BUILDING my project..."
+echo -e "${BLACK} [✓] BUILDING my project...${NONE}"
+echo -e "${RED} [✓] BUILDING my project...${NONE}"
+echo -e "${GREEN} [✓] BUILDING my project...${NONE}"
+echo -e "${YELLOW} [✓] BUILDING my project...${NONE}"
+echo -e "${BLUE} [✓] BUILDING my project...${NONE}"
+echo -e "${PURPLE} [✓] BUILDING my project...${NONE}"
+echo -e "${CYAN} [✓] BUILDING my project...${NONE}"
+echo -e "${WHITE} [✓] BUILDING my project...${NONE}"
+echo -e "${GRAY} [✓] BUILDING my project...${NONE}"
 
 
  
