@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
  
 NONE='\033[0m' # Eliminar as Cores, deixar padrão)
 
