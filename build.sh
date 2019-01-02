@@ -31,7 +31,7 @@ printf "\n${BLUE}[$(date +%H:%M:%S)][ * ] Agora vai!"
 
 printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai!"
 printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai!"
-printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai!"
+printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai!${NONE}"
 printf "\n${PURPLE}[$(date +%H:%M:%S)]${BLACK}[ * ] Agora ${BLUE} vai"
 printf "${NONE}"
 echo
