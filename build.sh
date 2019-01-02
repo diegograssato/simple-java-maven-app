@@ -1,6 +1,6 @@
 #!/bin/bash
  
-NONE='\e[0m' # Eliminar as Cores, deixar padrão)
+NONE='\e[0m\n' # Eliminar as Cores, deixar padrão)
 
 # Regular Colors
 BLACK='\e[1;30m'       # Black
@@ -32,3 +32,7 @@ printf "\n${BLUE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}"
 printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}"
 printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}"
 printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}"
+printf "\n${PURPLE}[$(date +%H:%M:%S)]${BLACK}[ * ] Agora ${BLUE} vai"
+printf "${NONE}"
+echo
+echo "What"
