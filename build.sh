@@ -5,15 +5,15 @@ NONE='\e[0m' # Eliminar as Cores, deixar padrão)
 
 ## Cores de Fonte
 # Regular Colors
-BLACK='\e[1;30m'        # Black
-RED='\e[1;31m'          # Red
-GREEN='\e[1;32m'        # Green
-YELLOW='\e[1;33m'       # Yellow
-BLUE='\e[1;34m'         # Blue
-PURPLE='\e[1;35m'       # Purple
-CYAN='\e[1;36m'         # Cyan
-WHITE='\e[1;37m'        # White
-GRAY='\e[1;90m'         # Gray
+BLACK='\e[30m'        # Black
+RED='\e[31m'          # Red
+GREEN='\e[32m'        # Green
+YELLOW='\e[33m'       # Yellow
+BLUE='\e[34m'         # Blue
+PURPLE='\e[35m'       # Purple
+CYAN='\e[36m'         # Cyan
+WHITE='\e[37m'        # White
+GRAY='\e[90m'         # Gray
 
 echo -e "${BLACK}[✓] BUILDING my project..."
 echo -e "${RED}[✓] BUILDING my project..."
