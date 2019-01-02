@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+set -o errexit # make your script exit when a command fails
+
 printf "\e[31mHello World\e[0m\n"
 printf "Normal \e[1mBold\e[0m\n"
 printf "Normal \e[4mUnderlined\e[0m\n"
@@ -11,8 +14,6 @@ printf "\x1b[31mHello\x1b[0m\n"
 
 
 NONE="\033[0m" # Eliminar as Cores, deixar padrão)
-
-set -o errexit # make your script exit when a command fails
 
 ## Cores de Fonte
 # Regular Colors
