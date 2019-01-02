@@ -1,29 +1,37 @@
 #!/usr/bin/env bash
-
  
-NONE='\e[0m' # Eliminar as Cores, deixar padrão)
+NONE='\033[0m' # Eliminar as Cores, deixar padrão)
 
-## Cores de Fonte
 # Regular Colors
-BLACK='\e[30m'        # Black
-RED='\e[31m'          # Red
-GREEN='\e[32m'        # Green
-YELLOW='\e[33m'       # Yellow
-BLUE='\e[34m'         # Blue
-PURPLE='\e[35m'       # Purple
-CYAN='\e[36m'         # Cyan
-WHITE='\e[37m'        # White
-GRAY='\e[90m'         # Gray
+BLACK='\033[1;30m'       # Black
+RED='\033[1;31m'         # Red
+GREEN='\033[1;32m'       # Green
+YELLOW='\033[1;33m'      # Yellow
+BLUE='\033[1;34m'        # Blue
+PURPLE='\033[1;35m'      # Purple
+CYAN='\033[1;36m'        # Cyan
+WHITE='\033[1;37m'       # White
 
-echo -e "${BLACK} [✓] BUILDING my project...${NONE}"
-echo -e "${RED} [✓] BUILDING my project...${NONE}"
-echo -e "${GREEN} [✓] BUILDING my project...${NONE}"
-echo -e "${YELLOW} [✓] BUILDING my project...${NONE}"
-echo -e "${BLUE} [✓] BUILDING my project...${NONE}"
-echo -e "${PURPLE} [✓] BUILDING my project...${NONE}"
-echo -e "${CYAN} [✓] BUILDING my project...${NONE}"
-echo -e "${WHITE} [✓] BUILDING my project...${NONE}"
-echo -e "${GRAY} [✓] BUILDING my project...${NONE}"
+
+#Danger/fail
+printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] Agora vai ${NONE}\n"
+
+#Sucess
+printf "\n${GREEN}[$(date +%H:%M:%S)][ ✔ ] Agora vai ${NONE}\n"
+
+# Warning
+printf "\n${YELLOW}[$(date +%H:%M:%S)][ ⚠ ] Agora vai ${NONE}\n"
+
+# Question
+printf "\n${CYAN}[$(date +%H:%M:%S)][ ? ] Agora vai ${NONE}\n"
+
+# Info
+printf "\n${BLUE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
+
+
+printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
+printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
+printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
 
 
  
