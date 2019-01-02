@@ -14,29 +14,29 @@ WHITE='\e[37m'       # White
 
 
 #Danger/fail
-printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] Agora vai ${NONE}\n"
+printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] Agora vai \n"
 
 #Sucess
-printf "\n${GREEN}[$(date +%H:%M:%S)][ ✔ ] Agora vai ${NONE}\n"
+printf "\n${GREEN}[$(date +%H:%M:%S)][ ✔ ] Agora vai \n"
 
 # Warning
-printf "\n${YELLOW}[$(date +%H:%M:%S)][ ⚠ ] Agora vai ${NONE}\n"
+printf "\n${YELLOW}[$(date +%H:%M:%S)][ ⚠ ] Agora vai \n"
 
 # Question
-printf "\n${CYAN}[$(date +%H:%M:%S)][ ? ] Agora vai ${NONE}\n"
+printf "\n${CYAN}[$(date +%H:%M:%S)][ ? ] Agora vai \n"
 
 # Info
-printf "\n${BLUE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
+printf "\n${BLUE}[$(date +%H:%M:%S)][ * ] Agora vai \n"
 
 
-printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
-printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
-printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai ${NONE}\n"
+printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai \n"
+printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai \n"
+printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai \n"
 
 function out_danger() {
  
 
-  printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] aaaaaaaaaa ${NONE}\n"
+  printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] aaaaaaaaaa \n"
 
 
 }
