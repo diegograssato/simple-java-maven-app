@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 
-set -o errexit # make your script exit when a command fails
 
 printf "\e[31mHello World\e[0m\n"
 printf "Normal \e[1mBold\e[0m\n"
