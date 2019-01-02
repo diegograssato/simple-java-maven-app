@@ -85,8 +85,15 @@ ON_IBLUE='\033[0;104m'    # Blue
 ON_IPURPLE='\033[0;105m'  # Purple
 ON_ICYAN='\033[0;106m'    # Cyan
 ON_IWHITE='\033[0;107m'   # White
+
+
 echo -e "${IRED}[✓] BUILDING my project...${NONE}"
 echo -e "${BIBLACK}[✓] BUILDING my project...${NONE}"
 echo -e "${BICYAN}[✓] BUILDING my project...${NONE}"
 echo -e "${ON_GREEN}[✓] BUILDING my project...${NONE}"
 echo -e "${IBLUE}[✓] BUILDING my project...${NONE}"
+
+
+echo -e "Default \e[31mRed"
+echo -e "Default \e[36mCyan"
+echo -e "Default \e[91mLight red"
