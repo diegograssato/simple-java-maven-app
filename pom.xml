@@ -4,7 +4,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>simple-java-maven</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>0.1.0</version>
   
   <name>bra-simple-java-maven</name>
   

@@ -8,6 +8,7 @@ image:
   repository: bra-simple-java-maven
   tag: latest
   pullPolicy: IfNotPresent
+  imagePullSecrets: "us-east-1-ecr-registry"
 
 nameOverride: ""
 fullnameOverride: ""
