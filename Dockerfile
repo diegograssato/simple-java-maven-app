@@ -8,7 +8,7 @@ FROM openjdk:8-jre-alpine
 
 ENV APP_HOME /usr/apps
 
-COPY --from=build /tmp/target/my-app.jar $APP_HOME/app.jar
+COPY --from=build /tmp/target/bra-simple-java-maven.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
