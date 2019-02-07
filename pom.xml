@@ -11,7 +11,7 @@
     <groupId>com.dtux</groupId>
     <artifactId>simple-java-maven</artifactId>
     <packaging>jar</packaging>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
 
     <name>bra-simple-java-maven</name>
     <description>My fisrt application with springboot and docker</description>
