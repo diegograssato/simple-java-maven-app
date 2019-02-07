@@ -1,5 +1,3 @@
-FROM openjdk:8-jre-alpine
-
 FROM maven:3.3.9-jdk-8-alpine AS build
 COPY pom.xml /tmp/
 COPY src /tmp/src/
