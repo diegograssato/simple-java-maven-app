@@ -13,26 +13,34 @@ CYAN='\e[1;36m'        # Cyan
 WHITE='\e[1;37m'       # White
 
 
-#Danger/fail
-printf "\n${RED}[$(date +%H:%M:%S)][ ✘ ] Agora vai!"
+IMAGE_NAME="bra-simple-java-maven"
+CONTAINER_NAME="bra-simple-java-maven-container"
+JAR_PATH="bra-simple-java-maven.jar"
 
-#Sucess
-printf "\n${GREEN}[$(date +%H:%M:%S)][ ✔ ] Agora vai!"
+#mvn clean package
+echo "-> Removendo container:  ${CONTAINER_NAME}"
+docker rm -f "${CONTAINER_NAME}" 2>/dev/null
 
-# Warning
-printf "\n${YELLOW}[$(date +%H:%M:%S)][ ⚠ ] Agora vai!"
+echo "-> Construindo imagem (docker build):  ${IMAGE_NAME}"
+docker build --build-arg APP_FILE="${JAR_PATH}" --build-arg APP_VERSION="1" --build-arg COMMIT_HASH="123" -t "${IMAGE_NAME}" .
+retCode=$?
+if [[ "${retCode}" -ne 0 ]]; then
+	echo -e "\n[ERRO] docker build: ${retCode} - verifique logs acima"
+	exit 1
+fi
 
-# Question
-printf "\n${CYAN}[$(date +%H:%M:%S)][ ? ] Agora vai!"
+if [[ -n "${RUN}" ]]; then
 
-# Info
-printf "\n${BLUE}[$(date +%H:%M:%S)][ * ] Agora vai!"
+	echo "-> Executando container: ${CONTAINER_NAME} porta 8080"
 
 
-printf "\n${WHITE}[$(date +%H:%M:%S)][ * ] Agora vai!"
-printf "\n${BLACK}[$(date +%H:%M:%S)][ * ] Agora vai!"
-printf "\n${PURPLE}[$(date +%H:%M:%S)][ * ] Agora vai!${NONE}"
-printf "\n${PURPLE}[$(date +%H:%M:%S)]${BLACK}[ * ] Agora ${BLUE} vai"
-printf "${NONE}"
-echo
-echo "What"
+	docker run \
+		--publish 8080:8080 \
+        --name "${CONTAINER_NAME}" \
+		"${IMAGE_NAME}"
+	retCode=$?
+	if [[ "${retCode}" -ne 130 ]]; then
+		echo -e "\n[ERRO] docker run: ${retCode} - verifique logs acima"
+		exit 1
+	fi
+fi
