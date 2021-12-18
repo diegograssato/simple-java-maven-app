@@ -13,7 +13,7 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 5678
 
 ingress:
   enabled: true
@@ -22,7 +22,7 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     kubernetes.io/ingress.allow-http: "true"
     kubernetes.io/ingress.class: ambassador
-  path: /microservices
+  path: /dtux
   hosts: []
   tls: []
   #  - secretName: chart-example-tls

@@ -1,7 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "bra-simple-java-maven-deploy.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
@@ -28,8 +28,11 @@ spec:
   rules:
   - http:
       paths:
-        - path: {{ $ingressPath }}
-          backend:
-            serviceName: {{ $fullName }}
-            servicePort: http
+      - pathType: Prefix
+        path: {{ $ingressPath }}
+        backend:
+          service:
+            name: {{ $fullName }}
+            port:
+              number: 5678
 {{- end }}
