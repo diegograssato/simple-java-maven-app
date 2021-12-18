@@ -29,16 +29,8 @@ spec:
               value: {{ $ingressPath }}
           ports:
             - name: http
-              containerPort: 8080
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: {{ $ingressPath }}/actuator/health
-              port: http
-          readinessProbe:
-            httpGet:
-              path: {{ $ingressPath }}/actuator/info
-              port: http
+              containerPort: 5678
+              protocol: TCP          
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
