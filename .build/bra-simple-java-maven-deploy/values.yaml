@@ -21,7 +21,7 @@ ingress:
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     kubernetes.io/ingress.allow-http: "true"
-    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: ambassador
   path: /microservices
   hosts: []
   tls: []
