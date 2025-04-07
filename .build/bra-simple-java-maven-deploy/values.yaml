@@ -27,7 +27,8 @@ ingress:
     spec.ingressClassName: traefik
     #traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
   path: /dtux
-  hosts: []
+  hosts:
+    - app.dtux.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
