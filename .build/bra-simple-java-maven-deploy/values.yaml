@@ -25,6 +25,7 @@ ingress:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     kubernetes.io/ingress.class: traefik
     spec.ingressClassName: traefik
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
   path: /dtux
   hosts: []
   tls: []
