@@ -17,8 +17,6 @@ image:
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: 
   - name: regcred
-  - name: registry-basic-auth-secret
-  - name: my-private-registry 
 # This is to override the chart name.
 nameOverride: "simple-java-maven"
 fullnameOverride: "simple-java"
