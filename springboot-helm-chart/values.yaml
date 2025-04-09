@@ -40,7 +40,8 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels:
     environment: production
-    app: demo
+    tier: backend
+    role: master
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -72,7 +73,7 @@ ingress:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     kubernetes.io/ingress.class: traefik
     spec.ingressClassName: traefik
-    #traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: default-registry-basic-auth@kubernetescrd
   hosts:
     - host: app.dtux.local
       paths:
@@ -107,11 +108,11 @@ readinessProbe:
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
-  enabled: false
+  enabled: true
   minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 60
 
 # Additional volumes on the output Deployment definition.
 volumes: []
