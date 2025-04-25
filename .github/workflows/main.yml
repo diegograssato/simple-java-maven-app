@@ -27,7 +27,7 @@ jobs:
           argocd_applications: "gha-runner-scale-set-sample"
           refresh: "true"
           sync: "true"
-          insecure: "true"
+          insecure: "false"
           prune: "false"
  
        
