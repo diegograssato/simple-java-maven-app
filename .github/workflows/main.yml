@@ -29,6 +29,6 @@ jobs:
           refresh: "true"
           sync: "true"
           insecure: "true"
-          prune: "true"
+          prune: "false"
  
        
