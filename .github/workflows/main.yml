@@ -7,7 +7,7 @@ on:
 jobs:
   build-image:   
     runs-on: 
-      group: default
+      group: Default
       labels: gha-runner-scaleset-sample
 
     permissions:
