@@ -25,7 +25,7 @@ jobs:
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
           argocd_username: ${{ secrets.ARGOCD_USERNAME }}
           argocd_password: ${{ secrets.ARGOCD_PASSWORD }}
-          argocd_applications: "gha-runner-scaleset-sample"
+          argocd_applications: "gha-runner-scale-set-sample"
           refresh: "true"
           sync: "true"
           insecure: "true"
