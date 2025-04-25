@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-image:   
-    runs-on: gha-runner-scaleset-sample
+    runs-on: keda
 
     permissions:
       contents: read
