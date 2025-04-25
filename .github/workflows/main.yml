@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Deploy via ArgoCD utilizando username e password
+      - name: Deploy via ArgoCD utilizando token
         uses: diegograssato/argocd-gh-action@v1.0.0
         with:
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
