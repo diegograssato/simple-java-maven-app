@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-image:   
-    runs-on: keda
+    runs-on: self-hosted
 
     permissions:
       contents: read
