@@ -1,0 +1,34 @@
+name: Build and Publish DevOps Tools
+
+on:
+ push:
+   branches: [ main ]
+
+jobs:
+  build-image:
+    runs-on: gha-runner-scaleset-sample
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write # needed for signing the images with GitHub OIDC Token
+
+    name: build-image
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Deploy via ArgoCD utilizando username e password
+        uses: actions/argocd-github-action@v1
+        with:
+          argocd_server: ${{ secrets.ARGOCD_SERVER }}
+          argocd_username: ${{ secrets.ARGOCD_USERNAME }}
+          argocd_password: ${{ secrets.ARGOCD_PASSWORD }}
+          argocd_applications: "gha-runner-scaleset-sample"
+          refresh: "true"
+          sync: "true"
+          insecure: "true"
+          prune: "true"
+ 
+       
