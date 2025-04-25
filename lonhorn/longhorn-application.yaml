@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  sources:
+    - chart: longhorn
+      repoURL: https://charts.longhorn.io/
+      targetRevision: v1.8.1 # Replace with the Longhorn version you'd like to install or upgrade to
+      helm:
+        values: |
+          preUpgradeChecker:
+            jobEnabled: false
+          ingress:
+            enabled: true
+            ingressClassName: "traefik"
+            annotations:
+              ingress.kubernetes.io/rewrite-target: /
+              nginx.ingress.kubernetes.io/ssl-redirect: "true"
+              cert-manager.io/cluster-issuer: letsencrypt-prod
+              nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+              kubernetes.io/ingress.class: traefik
+              spec.ingressClassName: traefik
+              traefik.ingress.kubernetes.io/router.middlewares: default-registry-basic-auth@kubernetescrd
+            host: longhorn.dtux.local
+            tls: true
+            pathType: ImplementationSpecific
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: longhorn-system
