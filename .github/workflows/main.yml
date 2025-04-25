@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-image:   
-    runs-on: self‑hosted
+    runs-on: gha-runner-scaleset-sample
 
     permissions:
       contents: read
@@ -23,8 +23,7 @@ jobs:
         uses: diegograssato/argocd-gh-action@v1.0.0
         with:
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
-          argocd_username: ${{ secrets.ARGOCD_USERNAME }}
-          argocd_password: ${{ secrets.ARGOCD_PASSWORD }}
+          argocd_token: ${{ secrets.ARGOCD_TOKEN }}
           argocd_applications: "gha-runner-scale-set-sample"
           refresh: "true"
           sync: "true"
