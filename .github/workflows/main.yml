@@ -31,7 +31,7 @@ jobs:
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
           argocd_token: ${{ secrets.ARGOCD_TOKEN }}
           argocd_applications: "gha-runner-scale-set-sample"
-          refresh: "false"
+          refresh: "true"
           sync: "true"
           insecure: "true"
           prune: "false"
