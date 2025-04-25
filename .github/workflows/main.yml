@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-image:   
-    runs-on: gha-runner-scaleset-sample
+    runs-on: self‑hosted
 
     permissions:
       contents: read
