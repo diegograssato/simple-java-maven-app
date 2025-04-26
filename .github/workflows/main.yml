@@ -33,7 +33,7 @@ jobs:
           argocd_applications: "sample-dev"
           refresh: "true"
           sync: "true"
-          insecure: "false"
+          insecure: "true"
           prune: "true"
  
        
