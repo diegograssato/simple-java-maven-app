@@ -30,7 +30,7 @@ jobs:
         with:
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
           argocd_token: ${{ secrets.ARGOCD_TOKEN }}
-          argocd_applications: "keda"
+          argocd_applications: "sample-dev"
           refresh: "true"
           sync: "true"
           insecure: "false"
