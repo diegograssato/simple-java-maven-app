@@ -31,7 +31,7 @@ jobs:
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
           argocd_token: ${{ secrets.ARGOCD_TOKEN }}
           argocd_applications: "sample-dev"
-          refresh: "true"
+          refresh: "false"
           sync: "true"
           insecure: "false"
           prune: "true"
